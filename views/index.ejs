@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="on">Click on</button>
+    <button class="of">Click of </button>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+    <script>
+        var socket = io();
+
+        var on = document.querySelector(".on");
+        var of = document.querySelector(".of");
+   
+    on.addEventListener("click", function() {
+        console.log("trun on");
+        socket.emit("message", "turn on clicked");
+    });
+    
+
+      
+        of.addEventListener("click", function() {
+            console.log("trun off");
+            socket.emit("message", "turn of clicked");
+        });
+      
+
+
+       
+    </script>
+</body>
+</html>
